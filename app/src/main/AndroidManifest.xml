@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+ 
+<application  android:label="demo"
+		 android:icon="@drawable/icon" 
+		 android:usesCleartextTraffic="true" >		 
+
+        <activity android:exported="true" 
+			android:name=".main"
+			android:screenOrientation="portrait"
+			android:launchMode="singleTask">
+			
+           <intent-filter>
+                <action   android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            
+        </activity>
+
+ 
+		<!-- dfpush -->
+		<receiver android:exported="true" android:name="com.anyone.message.dfpush" >
+			<intent-filter>
+				<action android:name="com.dfpush.OPENPUSH.MESSAGE" />
+			</intent-filter>
+		</receiver>
+		<!-- dfpush end -->
+ 
+
+			
+    </application>
+
+ 	<!-- dfpush -->
+	<queries>
+		<intent>
+			<action android:name="com.dfpush.OPENPUSH.SERVICE"/>
+		</intent>
+	</queries>
+	<!-- dfpush end -->
+		 
+  
+	<uses-permission android:name="android.permission.INTERNET" />
+ 
+
+
+</manifest>
